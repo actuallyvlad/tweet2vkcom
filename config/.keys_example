@@ -1,0 +1,14 @@
+# Twitter consumer key
+TW_CONSUMER_KEY:12345
+
+# Twitter consumer secret
+TW_CONSUMER_SECRET:12345
+
+# Twitter access token
+TW_ACCESS_TOKEN:12345
+
+# Twitter access token secret
+TW_ACCESS_TOKEN_SECRET:12345
+
+# VK access token
+VK_ACCESS_TOKEN:12345
