@@ -1,3 +1,4 @@
 bin/
 config/.keys
 config/config.conf
+log.txt
