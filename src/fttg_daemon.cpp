@@ -10,7 +10,7 @@ using namespace std;
 
 static ofstream log("../log.txt", ios::app);
 
-const string command = "python fttg.py";
+const string command = "python ../src/fttg.py";
 
 void logger(string text) {
 	time_t now = time(0);
