@@ -8,14 +8,14 @@
 
 using namespace std;
 
-static ofstream log("../log.txt", ios::app);
-
 const string command = "python ../src/fttg.py";
 
-void logger(string text) {
+void logger(string&& text) {
+	ofstream log("../log.txt", ios::app);
 	time_t now = time(0);
 	string dt = ctime(&now);
 	log << dt << " " << text << endl;
+	log.close();
 }
 
 void process() {
@@ -31,11 +31,9 @@ void process() {
 			logger("Failed to launch python script");
 		}
 	}
-}   
+}
 
-int main() {
-    logger("Starting daemon");
-
+int daemonize() {
     // Fork the process and have the parent exit. If the process was started
     // from a shell, this returns control to the user. Forking a new process is
     // also a prerequisite for the subsequent call to setsid().
@@ -108,6 +106,14 @@ int main() {
     close(STDIN_FILENO);
     close(STDOUT_FILENO);
     close(STDERR_FILENO);
+    
+    return 0;
+}
+
+int main() {
+    logger("Starting daemon");
+	
+	daemonize();
 	
 	// Main process
     while(true) {
@@ -117,7 +123,4 @@ int main() {
     }
 	
 	logger("Exiting");
-	
-    // Close the log
-    log.close();
 }
