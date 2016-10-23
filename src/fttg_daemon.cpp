@@ -1,5 +1,5 @@
-#include <sys/types.h> // for
-#include <sys/stat.h> // umask()
+#include <sys/types.h> // } for
+#include <sys/stat.h> //  } umask()
 #include <unistd.h> // fork, sleep, ...
 #include <stdlib.h>
 #include <string>
@@ -10,7 +10,7 @@ using namespace std;
 
 const string command = "python ../src/fttg.py";
 
-void logger(string&& text) {
+void logger(const string& text) {
 	ofstream log("../log.txt", ios::app);
 	time_t now = time(0);
 	string dt = ctime(&now);
