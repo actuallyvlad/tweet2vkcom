@@ -1,5 +1,5 @@
-# Fresh Tweet To Group
-A weird combination of C++ and Python code that works like a daemon. It grabs the most recent tweet from given feeds and posts it as the status of a vk.com community
+# tweet2vkcom
+A weird combination of C++ and Python code that works like a daemon. It grabs the most recent tweet from given feeds and posts it as the status of a community on vk.com
 
 ## Useful resources
 * [Why fork() twice](http://stackoverflow.com/questions/10932592/why-fork-twice/16655124)
